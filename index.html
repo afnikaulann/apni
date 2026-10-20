@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afni Kaulan Sadida • Portfolio Profesional | Bisnis Digital & Microsoft Office Specialist</title>
+  <meta name="description" content="Portfolio resmi Afni Kaulan Sadida - S1 Bisnis Digital Universitas Negeri Makassar (IPK 3,76 Cumlaude). Spesialisasi Microsoft Office, Administrasi Bisnis Digital, dan Pengembangan Web." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans (Clean, Modern, Corporate) & Outfit for elegant titles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Chart.js for Excel interactive dashboard simulation -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rosebrand: {
+              50: '#FDF8F7',
+              100: '#F9ECE9',
+              200: '#F3D8D3',
+              300: '#E6BCB4',
+              400: '#D4968C',
+              500: '#BE6E62',
+              600: '#A45348',
+              700: '#8A3F36',
+              800: '#72342D',
+              900: '#5F2D27',
+              dark: '#3A1814',
+            },
+            dusty: {
+              50: '#FAF6F7',
+              100: '#F4ECEF',
+              200: '#EAD9DF',
+              300: '#D9BAC4',
+              400: '#C296A5',
+              500: '#A87385',
+              600: '#8E5A6C',
+              700: '#754657',
+              800: '#613B48',
+              900: '#4A2B36',
+            },
+            neutralwarm: {
+              50: '#FAF8F6',
+              100: '#F4EFEB',
+              200: '#E8DFD8',
+              300: '#D5C7BD',
+              400: '#BBA89B',
+              500: '#9E887B',
+              slate: '#1E293B',
+              charcoal: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(117, 70, 87, 0.06), 0 2px 6px -1px rgba(117, 70, 87, 0.04)',
+            'card': '0 10px 30px -4px rgba(117, 70, 87, 0.08), 0 4px 12px -2px rgba(117, 70, 87, 0.04)',
+            'hover': '0 20px 35px -6px rgba(117, 70, 87, 0.12), 0 8px 16px -3px rgba(117, 70, 87, 0.06)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Elegant Subtle Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4ECEF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C296A5;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8E5A6C;
+    }
+
+    /* ===== PREMIUM ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes blobMove {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(32px, -22px) scale(1.06); }
+      66% { transform: translate(-22px, 22px) scale(0.95); }
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.7); opacity: .45; }
+    }
+    @keyframes shine {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Hero entrance (staggered on page load) */
+    .hero-anim { opacity: 0; animation: fadeUp .85s cubic-bezier(.22,.61,.36,1) forwards; }
+    .hero-anim-d1 { animation-delay: .12s; }
+    .hero-anim-d2 { animation-delay: .26s; }
+    .hero-anim-d3 { animation-delay: .4s; }
+    .hero-anim-d4 { animation-delay: .55s; }
+    .hero-anim-d5 { animation-delay: .7s; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Floating photo frame & ambient blobs */
+    .animate-float { animation: floatY 6s ease-in-out infinite; }
+    .animate-blob { animation: blobMove 14s ease-in-out infinite; }
+    .animate-blob-slow { animation: blobMove 20s ease-in-out infinite reverse; }
+
+    /* Pulsing status dot */
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+
+    /* Shimmering name text */
+    .shine-text {
+      background: linear-gradient(90deg, #754657 20%, #C296A5 40%, #E6BCB4 50%, #C296A5 60%, #754657 80%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 5s linear infinite;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #C296A5, #754657);
+      z-index: 60;
+      transition: width .08s linear;
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-anim { opacity: 1; animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .animate-float, .animate-blob, .animate-blob-slow, .pulse-dot, .shine-text { animation: none; }
+      .shine-text { color: #754657; background: none; }
+    }
+  </style>
+</head>
+<body class="bg-[#FAF7F6] text-slate-800 font-sans antialiased selection:bg-dusty-200 selection:text-dusty-900 overflow-x-hidden relative">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Subtle Ambient Glows (Animated) -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-rose-100/40 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute top-1/3 -right-40 w-[28rem] h-[28rem] bg-dusty-100/50 rounded-full blur-3xl animate-blob-slow"></div>
+    <div class="absolute bottom-20 left-1/4 w-96 h-96 bg-amber-50/50 rounded-full blur-3xl animate-blob"></div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-white/95 backdrop-blur-md border border-dusty-200 px-5 py-3.5 rounded-2xl shadow-xl">
+    <div class="w-8 h-8 rounded-full bg-dusty-100 text-dusty-700 flex items-center justify-center text-sm font-bold">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <span id="toast-text" class="text-sm font-medium text-slate-700">Teks berhasil disalin!</span>
+  </div>
+
+  <!-- HEADER / NAVBAR (Clean, Elegant & Formal) -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-dusty-100/80 transition-all duration-300 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand / Name -->
+      <a href="#hero" class="group flex items-center gap-3 text-slate-800 hover:text-dusty-700 transition">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-dusty-700 to-dusty-500 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          A
+        </div>
+        <div>
+          <div class="font-display text-lg font-bold tracking-tight text-slate-900 group-hover:text-dusty-700 leading-none">
+            Afni Kaulan Sadida
+          </div>
+          <div class="text-[11px] font-semibold text-dusty-600 tracking-wider uppercase flex items-center gap-1.5 mt-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 pulse-dot"></span>
+            S1 Bisnis Digital UNM • Cumlaude
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium text-slate-600">
+        <a href="#about" class="px-3.5 py-2 rounded-xl hover:text-dusty-700 hover:bg-dusty-50 transition">Tentang</a>
+        <a href="#competencies" class="px-3.5 py-2 rounded-xl hover:text-dusty-700 hover:bg-dusty-50 transition">Kompetensi</a>
+        <a href="#skills" class="px-3.5 py-2 rounded-xl hover:text-dusty-700 hover:bg-dusty-50 transition">Keahlian</a>
+        <a href="#contact" class="px-3.5 py-2 rounded-xl hover:text-dusty-700 hover:bg-dusty-50 transition">Kontak</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Direct WhatsApp CTA -->
+        <a href="https://wa.me/6285696525184?text=Halo%20Afni,%20saya%20tertarik%20dengan%20profil%20dan%20kompetensi%20Anda." target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-dusty-700 to-dusty-600 hover:from-dusty-800 hover:to-dusty-700 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Hubungi Saya</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl text-slate-600 hover:text-dusty-700 hover:bg-dusty-50 transition" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-dusty-100 px-6 py-4 space-y-2">
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-dusty-700">Tentang Saya</a>
+      <a href="#competencies" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-dusty-700">Bidang Kompetensi</a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-dusty-700">Keahlian &amp; Software</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-dusty-700">Informasi Kontak</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 space-y-24">
+
+    <!-- HERO SECTION (Sophisticated, Formal, Warm Feminine Palette) -->
+    <section id="hero" class="pt-4 sm:pt-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Professional Profile & Bio -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="space-y-3">
+            <!-- Academic Distinction Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dusty-100/80 border border-dusty-200/80 text-dusty-900 text-xs font-semibold tracking-wide shadow-xs hero-anim">
+              <i class="fa-solid fa-graduation-cap text-dusty-700"></i>
+              <span>Fresh Graduate • S1 Bisnis Digital (IPK 3,76 Cumlaude)</span>
+            </div>
+
+            <!-- Full Name Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-slate-900 tracking-tight leading-tight hero-anim hero-anim-d1">
+              Afni Kaulan <span class="shine-text">Sadida</span>
+            </h1>
+
+            <!-- Professional Subtitle -->
+            <p class="text-base sm:text-lg font-semibold text-slate-700 leading-snug hero-anim hero-anim-d2">
+              Spesialisasi Administrasi Bisnis Digital, Microsoft Office (Excel/Word/PPT) &amp; Web Development
+            </p>
+          </div>
+
+          <!-- Formal Executive Summary -->
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed text-justify sm:text-left hero-anim hero-anim-d3">
+            Lulusan Sarjana Bisnis Digital dari Universitas Negeri Makassar dengan predikat kehormatan <strong>Cumlaude (IPK 3,76)</strong>. Memadukan pemahaman bisnis berbasis data, keahlian mendalam pada ekosistem <strong>Microsoft Office</strong> (pemodelan spreadsheet, otomatisasi formula, pelaporan formal, dan presentasi eksekutif), serta kemampuan teknis pengembangan web yang responsif dan terstruktur.
+          </p>
+
+          <!-- Core Credential Cards -->
+          <div class="grid grid-cols-3 gap-3 pt-2 hero-anim hero-anim-d4">
+            <div class="bg-white p-3.5 rounded-2xl border border-dusty-100 shadow-soft text-center">
+              <div id="ipk-counter" data-value="3.76" class="text-xl sm:text-2xl font-extrabold text-dusty-700 font-display">3,76</div>
+              <div class="text-[11px] font-semibold text-slate-500 mt-0.5">IPK Cumlaude 🎓</div>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-dusty-100 shadow-soft text-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-emerald-700 font-display">Expert</div>
+              <div class="text-[11px] font-semibold text-slate-500 mt-0.5">MS Office Pro 📊</div>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-dusty-100 shadow-soft text-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-slate-800 font-display">UNM</div>
+              <div class="text-[11px] font-semibold text-slate-500 mt-0.5">Bisnis Digital 🏛️</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2 hero-anim hero-anim-d5">
+            <a href="https://wa.me/6285696525184?text=Halo%20Afni,%20saya%20tertarik%20dengan%20kualifikasi%20Anda." target="_blank" class="px-6 py-3 rounded-xl bg-dusty-700 hover:bg-dusty-800 text-white font-semibold text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>Hubungi via WhatsApp</span>
+            </a>
+
+            <a href="#office-showcase" class="px-6 py-3 rounded-xl bg-white text-dusty-800 border border-dusty-300 hover:bg-dusty-50 font-semibold text-sm shadow-xs hover:-translate-y-0.5 transition flex items-center gap-2">
+              <i class="fa-solid fa-file-excel text-emerald-600"></i>
+              <span>Kemampuan MS Office</span>
+            </a>
+
+            <button onclick="copyContact('kaulanafni@gmail.com', 'Email kaulanafni@gmail.com disalin!')" class="px-4 py-3 rounded-xl bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 font-semibold text-sm transition flex items-center gap-2" title="Salin Email">
+              <i class="fa-regular fa-copy"></i>
+              <span>Salin Email</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right: Formal Graduation Photo Frame -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm sm:max-w-md hero-anim hero-anim-d3">
+            
+            <!-- Elegant Double Border Frame -->
+            <div class="relative bg-white p-3.5 rounded-3xl border border-dusty-200/80 shadow-card animate-float">
+              
+              <!-- Photo Container -->
+              <div class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-dusty-50 cursor-pointer group" onclick="openPhotoModal()" title="Klik untuk memperbesar foto">
+                <img src="assets/profile.jpg" alt="Foto Wisuda Afni Kaulan Sadida" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+                
+                <!-- Gentle Bottom Vignette -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60"></div>
+
+                <!-- Formal Name Overlay -->
+                <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-white/60 shadow-sm flex items-center justify-between">
+                  <div>
+                    <div class="font-display font-bold text-xs text-slate-900 leading-tight">Afni Kaulan Sadida, S.bns</div>
+                    <div class="text-[10px] text-slate-500 font-medium">Universitas Negeri Makassar</div>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                    Cumlaude 🏆
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE COMPETENCIES (Formal & Focused on capabilities, not raw portfolio files) -->
+    <section id="competencies" class="pt-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dusty-100 text-dusty-800 text-xs font-bold uppercase tracking-wider">
+          <i class="fa-solid fa-layer-group text-dusty-600"></i> Bidang Kompetensi
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+          Keahlian &amp; Kapabilitas Utama
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          Penguasaan administrasi data presisi, pelaporan korporat, arsitektur web modern, dan komunikasi visual yang teruji.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Competency 1: Microsoft Office & Data Administration (Flagship) -->
+        <div class="bg-white p-6 rounded-3xl border-2 border-emerald-200/90 shadow-soft hover:shadow-hover hover:-translate-y-1 transition duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl font-bold">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg font-display mb-1.5">Microsoft Office Pro</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Otomasi formula lanjutan Excel (XLOOKUP, Pivot, Dashboard), penyusunan SOP &amp; proposal terstruktur di Word, dan pembuatan slide deck presentasi eksekutif di PowerPoint.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 text-[11px] font-medium text-emerald-800">
+            <span class="bg-emerald-50 px-2 py-0.5 rounded">Excel Pivot</span>
+            <span class="bg-emerald-50 px-2 py-0.5 rounded">Word Styling</span>
+            <span class="bg-emerald-50 px-2 py-0.5 rounded">PPT Pitch Deck</span>
+          </div>
+        </div>
+
+        <!-- Competency 2: Web Development -->
+        <div class="bg-white p-6 rounded-3xl border border-dusty-100 shadow-soft hover:shadow-hover hover:-translate-y-1 transition duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-dusty-50 text-dusty-700 flex items-center justify-center text-xl font-bold">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg font-display mb-1.5">Web Development</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Pengembangan website responsif, modular, dan berperforma tinggi menggunakan teknologi modern: HTML, CSS, JavaScript, React, Next.js, dan integrasi API/Database Supabase.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 text-[11px] font-medium text-dusty-800">
+            <span class="bg-dusty-50 px-2 py-0.5 rounded">Next.js</span>
+            <span class="bg-dusty-50 px-2 py-0.5 rounded">React</span>
+            <span class="bg-dusty-50 px-2 py-0.5 rounded">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Competency 3: Digital Business Analysis -->
+        <div class="bg-white p-6 rounded-3xl border border-dusty-100 shadow-soft hover:shadow-hover hover:-translate-y-1 transition duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl font-bold">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg font-display mb-1.5">Analisis Bisnis Digital</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Penerapan prinsip bisnis digital, evaluasi KPI performa operasional, studi kelayakan finansial, analisis data transaksi, dan optimalisasi sistem e-commerce.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 text-[11px] font-medium text-amber-800">
+            <span class="bg-amber-50 px-2 py-0.5 rounded">Data Analytics</span>
+            <span class="bg-amber-50 px-2 py-0.5 rounded">Studi Kelayakan</span>
+            <span class="bg-amber-50 px-2 py-0.5 rounded">KPI Tracking</span>
+          </div>
+        </div>
+
+        <!-- Competency 4: Creative & Visual Media -->
+        <div class="bg-white p-6 rounded-3xl border border-dusty-100 shadow-soft hover:shadow-hover hover:-translate-y-1 transition duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-700 flex items-center justify-center text-xl font-bold">
+            <i class="fa-solid fa-photo-film"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg font-display mb-1.5">Kreativitas Multimedia</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Produksi konten video dinamis untuk media sosial dan presentasi korporat (CapCut, Premiere Pro), serta perancangan materi visual grafis dan layout promosi (Canva, Figma).
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 text-[11px] font-medium text-rose-800">
+            <span class="bg-rose-50 px-2 py-0.5 rounded">Premiere Pro</span>
+            <span class="bg-rose-50 px-2 py-0.5 rounded">CapCut</span>
+            <span class="bg-rose-50 px-2 py-0.5 rounded">Canva / Figma</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT ME & ACADEMIC DATA SECTION (Structured & Formal Bento) -->
+    <section id="about" class="pt-8">
+      <div class="bg-white rounded-3xl border border-dusty-100 shadow-card p-6 sm:p-10 space-y-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dusty-100 pb-5">
+          <div>
+            <div class="text-xs font-bold text-dusty-600 uppercase tracking-wider">Biodata &amp; Rekam Jejak</div>
+            <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900">Tentang Afni Kaulan Sadida</h2>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
+            <i class="fa-solid fa-circle-check"></i> Siap Bergabung &amp; Berkontribusi
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Key Personal Data Grid -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="p-4 rounded-2xl bg-neutralwarm-50 border border-neutralwarm-100">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nama Lengkap</div>
+              <div class="text-sm font-bold text-slate-900 mt-1">Afni Kaulan Sadida</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-neutralwarm-50 border border-neutralwarm-100">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tempat, Tanggal Lahir</div>
+              <div class="text-sm font-bold text-slate-900 mt-1">Merauke, 7 Mei 2004</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-neutralwarm-50 border border-neutralwarm-100">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Domisili</div>
+              <div class="text-sm font-bold text-slate-900 mt-1">Makassar, Sulawesi Selatan</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-neutralwarm-50 border border-neutralwarm-100">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Status Akademik</div>
+              <div class="text-sm font-bold text-slate-900 mt-1">Fresh Graduate (S1)</div>
+            </div>
+
+            <div class="sm:col-span-2 p-4 rounded-2xl bg-gradient-to-r from-dusty-50 to-neutralwarm-50 border border-dusty-200/60 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-dusty-700 text-white flex items-center justify-center shrink-0 text-lg">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-semibold text-dusty-700 uppercase tracking-wider">Institusi Pendidikan Formal</div>
+                <div class="text-base font-bold text-slate-900">Universitas Negeri Makassar (UNM)</div>
+                <div class="text-xs text-slate-600 mt-0.5">Program Studi: S1 Bisnis Digital • Predikat: <strong>Cumlaude (IPK 3,76)</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Professional Work Ethics & Value Statement -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="bg-gradient-to-br from-dusty-50 via-white to-amber-50/40 p-6 rounded-2xl border border-dusty-200/80 shadow-xs space-y-3">
+              <div class="text-xs font-bold text-dusty-800 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-compass text-dusty-600"></i> Prinsip &amp; Etos Kerja
+              </div>
+              <p class="text-sm text-slate-700 leading-relaxed italic">
+                “Bukan hanya tentang apa yang saya pelajari, melainkan bagaimana ilmu pengetahuan dan keahlian teknis tersebut dapat diterapkan secara presisi untuk memberikan efisiensi nyata bagi kemajuan organisasi.”
+              </p>
+              <div class="pt-2 border-t border-dusty-200/60 flex items-center justify-between text-xs text-slate-500">
+                <span class="font-semibold text-slate-800">Afni Kaulan Sadida</span>
+                <span>Integritas • Presisi • Adaptif</span>
+              </div>
+            </div>
+
+            <!-- Fast Contact Badge -->
+            <div class="bg-neutralwarm-50 p-4 rounded-2xl border border-neutralwarm-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-400 font-bold uppercase">Fast Response WhatsApp</div>
+                  <div class="text-sm font-bold text-slate-900">0856-9652-5184</div>
+                </div>
+              </div>
+              <a href="https://wa.me/6285696525184" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition">
+                Chat
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DEDICATED SHOWCASE: MICROSOFT OFFICE & DATA MASTERY (Interactive Simulator) -->
+    <section id="office-showcase" class="pt-4 scroll-mt-24">
+      
+      <div class="bg-white rounded-3xl border-2 border-emerald-300/80 shadow-card p-6 sm:p-10 space-y-8 relative overflow-hidden">
+        
+        <!-- Header -->
+        <div class="max-w-3xl space-y-2 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
+            <i class="fa-solid fa-award text-emerald-600"></i>
+            <span>Kapabilitas Spesialis Microsoft Office</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+            Analisis Data, Pelaporan Bisnis &amp; Presentasi Eksekutif
+          </h2>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Sebagai lulusan S1 Bisnis Digital, saya menguasai ekosistem <strong>Microsoft Office</strong> secara komprehensif untuk menjawab kebutuhan korporat: mulai dari otomatisasi kalkulasi dan dashboard analitik di <strong>Excel</strong>, standarisasi dokumen formal di <strong>Word</strong>, hingga visual storytelling di <strong>PowerPoint</strong>.
+          </p>
+        </div>
+
+        <!-- Tab Selector: Excel / PowerPoint / Word -->
+        <div class="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl max-w-lg border border-slate-200">
+          <button onclick="switchOfficeTab('excel')" id="btn-tab-excel" class="flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 bg-white text-emerald-700 shadow-sm transition-all">
+            <i class="fa-solid fa-file-excel text-emerald-600 text-base"></i>
+            <span>Microsoft Excel</span>
+          </button>
+          <button onclick="switchOfficeTab('ppt')" id="btn-tab-ppt" class="flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-600 hover:text-orange-700 transition-all">
+            <i class="fa-solid fa-file-powerpoint text-orange-600 text-base"></i>
+            <span>PowerPoint</span>
+          </button>
+          <button onclick="switchOfficeTab('word')" id="btn-tab-word" class="flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-600 hover:text-blue-700 transition-all">
+            <i class="fa-solid fa-file-word text-blue-600 text-base"></i>
+            <span>Microsoft Word</span>
+          </button>
+        </div>
+
+        <!-- TAB 1: MICROSOFT EXCEL INTERACTIVE DASHBOARD SIMULATOR -->
+        <div id="tab-content-excel" class="space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left: Dynamic Simulator View -->
+            <div class="lg:col-span-8 bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-5">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                  <span class="ml-2 font-mono text-xs font-semibold text-slate-700">
+                    <i class="fa-solid fa-file-excel text-emerald-600 mr-1"></i> Executive_Financial_Dashboard.xlsx
+                  </span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                  Live Dynamic Simulator
+                </span>
+              </div>
+
+              <!-- Period Filter Buttons -->
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                  <i class="fa-solid fa-filter text-emerald-600"></i> Filter Periode Analisis:
+                </div>
+                <div class="flex items-center gap-1.5 bg-white p-1 rounded-xl text-xs font-semibold border border-slate-200">
+                  <button onclick="filterExcelData('all')" id="btn-q-all" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-xs transition">Tahunan (Penuh)</button>
+                  <button onclick="filterExcelData('q1q2')" id="btn-q-q1q2" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-emerald-700 transition">Semester 1</button>
+                  <button onclick="filterExcelData('q3q4')" id="btn-q-q3q4" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-emerald-700 transition">Semester 2</button>
+                </div>
+              </div>
+
+              <!-- Dynamic Calculated KPIs -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <div class="text-[11px] font-medium text-slate-500">Total Pendapatan</div>
+                  <div id="kpi-revenue" class="text-lg font-extrabold text-slate-900 font-display">Rp 148,5 M</div>
+                  <div class="text-[10px] font-bold text-emerald-600 mt-0.5">+14.2% YoY</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <div class="text-[11px] font-medium text-slate-500">Pencapaian Target</div>
+                  <div id="kpi-target" class="text-lg font-extrabold text-slate-900 font-display">112.4%</div>
+                  <div class="text-[10px] font-bold text-dusty-700 mt-0.5">Optimal</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <div class="text-[11px] font-medium text-slate-500">Laba Bersih Operasional</div>
+                  <div id="kpi-profit" class="text-lg font-extrabold text-slate-900 font-display">Rp 52,2 M</div>
+                  <div class="text-[10px] font-bold text-blue-600 mt-0.5">35.1% Net Margin</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <div class="text-[11px] font-medium text-slate-500">Efisiensi Biaya</div>
+                  <div id="kpi-efficiency" class="text-lg font-extrabold text-slate-900 font-display">94.8%</div>
+                  <div class="text-[10px] font-bold text-emerald-600 mt-0.5">Grade A+</div>
+                </div>
+              </div>
+
+              <!-- Interactive Sales Chart Container -->
+              <div class="h-64 sm:h-72 w-full bg-white p-3 rounded-xl border border-slate-200">
+                <canvas id="excelSalesChart"></canvas>
+              </div>
+
+              <!-- Formula Bar Simulation -->
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 font-mono text-xs">
+                <span class="font-bold text-emerald-700 px-2 py-0.5 bg-emerald-50 rounded text-[11px]">fx</span>
+                <span id="excel-formula-bar" class="text-slate-700 truncate">
+                  =XLOOKUP(ID_Produk, Table_Sales[ID], Table_Sales[Revenue]) * (1 + Growth_Rate)
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Right: Excel Skill Capabilities -->
+            <div class="lg:col-span-4 space-y-4">
+              
+              <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-emerald-600"></i>
+                  Penguasaan Fitur Excel
+                </h3>
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                    <span><strong>Advanced Formulas:</strong> XLOOKUP, VLOOKUP, INDEX/MATCH, SUMIFS, COUNTIFS, Nested IF logic.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                    <span><strong>Pivot Tables &amp; Slicers:</strong> Analisis multi-dimensi ratusan ribu baris data penjualan &amp; keuangan.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                    <span><strong>Data Cleaning &amp; Validation:</strong> Text to columns, deduplikasi, conditional formatting heatmaps.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                    <span><strong>Dashboard Eksekutif:</strong> Pemodelan laporan ringkas dengan visual grafik otomatis dan indikator KPI.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Interactive Quick Profit Margin Calculator -->
+              <div class="bg-gradient-to-br from-emerald-50 to-dusty-50 rounded-2xl p-4 border border-emerald-200 space-y-2.5">
+                <div class="text-xs font-bold text-slate-800 flex items-center justify-between">
+                  <span>💡 Kalkulator Margin Formula</span>
+                  <span class="text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded-full font-bold">Live Calculator</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <label class="text-[10px] text-slate-600 font-semibold">Harga Jual (Rp)</label>
+                    <input type="number" id="calc-price" value="150000" oninput="calculateMargin()" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 bg-white font-mono text-xs outline-none focus:border-emerald-500" />
+                  </div>
+                  <div>
+                    <label class="text-[10px] text-slate-600 font-semibold">Modal / HPP (Rp)</label>
+                    <input type="number" id="calc-cogs" value="95000" oninput="calculateMargin()" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 bg-white font-mono text-xs outline-none focus:border-emerald-500" />
+                  </div>
+                </div>
+                <div class="pt-1.5 flex items-center justify-between text-xs font-bold text-slate-800 border-t border-emerald-200/80">
+                  <span>Gross Profit Margin:</span>
+                  <span id="calc-result" class="text-emerald-700 font-mono text-sm font-bold">36.67%</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 2: POWERPOINT PITCH DECK SIMULATOR -->
+        <div id="tab-content-ppt" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <div class="lg:col-span-8 bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                  <span class="ml-2 font-mono text-xs font-semibold text-slate-700">
+                    <i class="fa-solid fa-file-powerpoint text-orange-600 mr-1"></i> Executive_Pitch_Deck_Strategy.pptx
+                  </span>
+                </div>
+                <span class="text-xs font-bold text-orange-700 bg-orange-100 px-2 py-0.5 rounded">
+                  Slide Deck Simulator
+                </span>
+              </div>
+
+              <!-- Slide Display Stage -->
+              <div id="ppt-slide-stage" class="relative rounded-2xl overflow-hidden aspect-[16/9] bg-gradient-to-br from-[#1E293B] via-[#334155] to-[#475569] text-white p-6 sm:p-10 flex flex-col justify-between shadow-inner transition-all duration-300">
+                
+                <div class="flex items-center justify-between">
+                  <span id="slide-badge" class="px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-bold tracking-wider uppercase border border-white/20">
+                    Slide 1 • Executive Cover
+                  </span>
+                  <span class="text-xs text-slate-300 font-mono">16:9 Widescreen</span>
+                </div>
+
+                <div class="space-y-3 py-4">
+                  <h3 id="slide-title" class="text-2xl sm:text-4xl font-extrabold tracking-tight font-display text-white">
+                    Digital Business Acceleration 2026
+                  </h3>
+                  <p id="slide-desc" class="text-slate-200 text-sm sm:text-base max-w-xl leading-relaxed">
+                    Strategi Pertumbuhan Bisnis Berbasis Analisis Data Riil, Transformasi Saluran Digital, dan Optimasi Konversi.
+                  </p>
+                </div>
+
+                <div id="slide-footer-tags" class="flex flex-wrap gap-2 text-xs font-semibold text-white/90">
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur border border-white/20">Target ROI: +250%</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur border border-white/20">Market Penetration</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur border border-white/20">Afni Kaulan Sadida</span>
+                </div>
+
+              </div>
+
+              <!-- Slide Controls -->
+              <div class="flex items-center justify-between pt-2">
+                <button onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-chevron-left"></i> Slide Sebelumnya
+                </button>
+                <div class="text-xs font-bold text-slate-600">
+                  <span id="current-slide-num">1</span> dari 4 Slide
+                </div>
+                <button onclick="nextSlide()" class="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-xs">
+                  Slide Selanjutnya <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Right: PowerPoint Competencies -->
+            <div class="lg:col-span-4 space-y-4">
+              <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                  <i class="fa-solid fa-wand-magic-sparkles text-orange-600"></i>
+                  Standar Presentasi Modern
+                </h3>
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-orange-600 mt-1 shrink-0"></i>
+                    <span><strong>Visual Storytelling:</strong> Menyajikan data kompleks ke dalam alur visual dan diagram yang mudah dipahami direksi.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-orange-600 mt-1 shrink-0"></i>
+                    <span><strong>Slide Master &amp; Branding:</strong> Tata letak konsisten, palet warna korporat yang harmonis, dan hierarki tipografi rapi.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-orange-600 mt-1 shrink-0"></i>
+                    <span><strong>Morph &amp; Smooth Transitions:</strong> Animasi perpindahan halus tanpa distraksi visual.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-orange-50 border border-orange-200 p-4 rounded-2xl text-xs text-orange-950 space-y-1">
+                <div class="font-bold">✓ Siap untuk Sidang &amp; Rapat Direksi</div>
+                <p class="text-orange-900 leading-relaxed">
+                  Menghindari slide yang dipenuhi paragraf panjang, menerapkan prinsip <em>One Concept Per Slide</em> dengan grafis berdaya pikat tinggi.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 3: MICROSOFT WORD FORMAL DOCUMENTATION -->
+        <div id="tab-content-word" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <div class="lg:col-span-8 bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                  <span class="ml-2 font-mono text-xs font-semibold text-slate-700">
+                    <i class="fa-solid fa-file-word text-blue-600 mr-1"></i> Standar_Operasional_Prosedur_&amp;_Proposal.docx
+                  </span>
+                </div>
+                <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">
+                  Format Dokumen Formal
+                </span>
+              </div>
+
+              <!-- Document Preview Sheet -->
+              <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-300 space-y-4 font-sans text-slate-800 text-xs sm:text-sm">
+                <div class="border-b-2 border-blue-900 pb-3">
+                  <div class="text-[10px] font-bold text-blue-900 uppercase tracking-widest">DOKUMEN RESMI TATA KELOLA BISNIS DIGITAL</div>
+                  <div class="text-lg font-extrabold text-slate-900 font-display">STUDI KELAYAKAN BISNIS &amp; STANDAR OPERASIONAL (SOP)</div>
+                  <div class="text-xs text-slate-500 mt-1">Disusun oleh: Afni Kaulan Sadida, S.bns</div>
+                </div>
+
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs space-y-1 font-mono">
+                  <div class="font-bold text-slate-900 font-sans uppercase text-[11px]">Daftar Isi Otomatis (Heading Styles):</div>
+                  <div class="flex justify-between text-slate-600"><span>1. Ringkasan Eksekutif .................................</span><span>Hal 01</span></div>
+                  <div class="flex justify-between text-slate-600"><span>2. Analisis Model Bisnis &amp; Pasar ............</span><span>Hal 06</span></div>
+                  <div class="flex justify-between text-slate-600"><span>3. Prosedur Operasional Standar (SOP) ..</span><span>Hal 14</span></div>
+                  <div class="flex justify-between text-slate-600"><span>4. Evaluasi Finansial &amp; Cash Flow ............</span><span>Hal 22</span></div>
+                </div>
+
+                <div class="space-y-2 pt-1 text-slate-600 leading-relaxed text-xs">
+                  <p class="font-bold text-slate-800 text-xs">1. Ringkasan Eksekutif</p>
+                  <p>
+                    Dokumentasi ini disusun mengacu pada kaidah tata tulis formal akademik dan korporat: penataan margin presisi, navigasi heading berjenjang, pemisahan nomor halaman romawi dan angka arab otomatis, serta konsistensi tabel dan grafik.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-200 text-[10px] font-bold text-blue-800">
+                  <span class="bg-blue-50 px-2 py-0.5 rounded">✓ Multilevel Numbering</span>
+                  <span class="bg-blue-50 px-2 py-0.5 rounded">✓ Mail Merge Surat Massal</span>
+                  <span class="bg-blue-50 px-2 py-0.5 rounded">✓ Format Sitasi Standar APA / Dikti</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right: Word Competencies -->
+            <div class="lg:col-span-4 space-y-4">
+              <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                  <i class="fa-solid fa-file-lines text-blue-600"></i>
+                  Kerapian &amp; Struktur Dokumen
+                </h3>
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-blue-600 mt-1 shrink-0"></i>
+                    <span><strong>Daftar Isi &amp; Tabel Otomatis:</strong> Sinkronisasi nomor halaman instan tanpa perlu pengecekan manual.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-blue-600 mt-1 shrink-0"></i>
+                    <span><strong>Heading Styles Terstruktur:</strong> Penataan dokumen ratusan halaman secara rapi dan mudah dinavigasikan.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-blue-600 mt-1 shrink-0"></i>
+                    <span><strong>Mail Merge Database:</strong> Otomasi pencetakan surat formal, sertifikat, atau korespondensi massal via Excel.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-50 border border-blue-200 p-4 rounded-2xl text-xs text-blue-950 space-y-1">
+                <div class="font-bold">✓ Zero Formatting Errors</div>
+                <p class="text-blue-900 leading-relaxed">
+                  Bebas dari kesalahan spasi ganda, page break acak, tabel terpotong, atau nomor urut yang terputus.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TECHNICAL & INTERPERSONAL SKILLS MATRIX -->
+    <section id="skills" class="pt-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dusty-100 text-dusty-800 text-xs font-bold uppercase tracking-wider">
+          <i class="fa-solid fa-screwdriver-wrench text-dusty-600"></i> Matriks Keahlian
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+          Software &amp; Keterampilan Teknis
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          Daftar perangkat lunak dan keahlian teknis yang saya operasikan untuk produktivitas kerja harian.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Skill 1: Microsoft Excel -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Microsoft Excel</h4>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Advanced</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">XLOOKUP, Pivot Table, Data Modeling</p>
+          </div>
+        </div>
+
+        <!-- Skill 2: Microsoft Word -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-file-word"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Microsoft Word</h4>
+              <span class="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">Advanced</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Heading Styles, Automated TOC, Mail Merge</p>
+          </div>
+        </div>
+
+        <!-- Skill 3: Microsoft PowerPoint -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-file-powerpoint"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Microsoft PowerPoint</h4>
+              <span class="text-[11px] font-bold text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full">Advanced</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Slide Master, Pitch Decks, Morph Visual</p>
+          </div>
+        </div>
+
+        <!-- Skill 4: HTML, CSS, JavaScript -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            &lt;/&gt;
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">HTML, CSS, JavaScript</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Proficient</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Struktur web, DOM, &amp; responsive layouts</p>
+          </div>
+        </div>
+
+        <!-- Skill 5: Next.js & React -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-brands fa-react"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Next.js &amp; React</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Proficient</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">App Router, Komponen UI &amp; State</p>
+          </div>
+        </div>
+
+        <!-- Skill 6: Supabase & Database Relasional -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Supabase &amp; Prisma ORM</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Proficient</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">PostgreSQL, Skema Data &amp; RESTful API</p>
+          </div>
+        </div>
+
+        <!-- Skill 7: Video Editing (CapCut & Premiere) -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Video Editing</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Proficient</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Adobe Premiere Pro &amp; CapCut Pro</p>
+          </div>
+        </div>
+
+        <!-- Skill 8: Desain Grafis (Canva & Figma) -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-pen-nib"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Desain Grafis (Canva &amp; Figma)</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Proficient</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Identitas Visual, Layout Feed &amp; Materi Promosi</p>
+          </div>
+        </div>
+
+        <!-- Skill 9: Soft Skills & Teamwork -->
+        <div class="bg-white p-5 rounded-2xl border border-dusty-100 shadow-soft flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center text-xl shrink-0 font-bold">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-sm truncate">Kolaborasi &amp; Komunikasi</h4>
+              <span class="text-[11px] font-bold text-dusty-700 bg-dusty-50 px-2 py-0.5 rounded-full">Interpersonal</span>
+            </div>
+            <p class="text-xs text-slate-500 truncate mt-0.5">Orientasi Detail, Manajemen Waktu, Adaptif</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT SECTION (Updated with 085696525184 and kaulanafni@gmail.com) -->
+    <section id="contact" class="pt-8">
+      
+      <!-- Banner -->
+      <div class="bg-gradient-to-r from-dusty-800 via-dusty-700 to-rosebrand-700 text-white rounded-3xl p-8 sm:p-10 shadow-card text-center mb-8">
+        <div class="max-w-2xl mx-auto space-y-3">
+          <div class="inline-block px-3.5 py-1 rounded-full bg-white/15 backdrop-blur text-white text-xs font-semibold uppercase tracking-wider">
+            Inisiasi Kerja Sama
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold font-display">
+            Siap Berkontribusi Bersama Tim &amp; Perusahaan Anda
+          </h2>
+          <p class="text-dusty-100 text-sm sm:text-base leading-relaxed">
+            Terbuka untuk kesempatan kerja <strong>Full-time, Administrasi Bisnis / Spesialis Microsoft Office, Web Developer, maupun Proyek Profesional</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Direct Contact Channels -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white p-6 rounded-3xl border border-dusty-100 shadow-card space-y-4">
+            <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2 font-display">
+              <i class="fa-solid fa-address-book text-dusty-700"></i>
+              Saluran Komunikasi Langsung
+            </h3>
+
+            <!-- WhatsApp (085696525184) -->
+            <a href="https://wa.me/6285696525184?text=Halo%20Afni,%20saya%20tertarik%20dengan%20kualifikasi%20Anda." target="_blank" class="flex items-center gap-4 p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-slate-800 hover:bg-emerald-100/70 transition group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-xs group-hover:scale-105 transition-transform">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-[10px] uppercase font-bold text-emerald-800">WhatsApp Resmi</div>
+                <div class="text-base font-extrabold text-emerald-950">0856-9652-5184</div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-emerald-600 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <!-- Email (kaulanafni@gmail.com) -->
+            <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-dusty-50/70 border border-dusty-200 text-slate-800 hover:bg-dusty-100/70 transition group">
+              <div class="w-12 h-12 rounded-xl bg-dusty-700 text-white flex items-center justify-center text-xl shadow-xs group-hover:scale-105 transition-transform">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-[10px] uppercase font-bold text-dusty-800">Email Resmi</div>
+                <div class="text-sm font-extrabold text-dusty-950 truncate">kaulanafni@gmail.com</div>
+              </div>
+              <button onclick="copyContact('kaulanafni@gmail.com', 'Email berhasil disalin!')" class="p-2 rounded-lg bg-white text-dusty-700 hover:bg-dusty-50 shadow-xs text-xs font-bold" title="Salin Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/afnikaulann" target="_blank" class="flex items-center gap-4 p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200 text-slate-800 hover:bg-rose-100/70 transition group">
+              <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-xs group-hover:scale-105 transition-transform">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-[10px] uppercase font-bold text-rose-800">Instagram</div>
+                <div class="text-base font-extrabold text-rose-950">@afnikaulann</div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-rose-600 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <!-- Location -->
+            <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800">
+              <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center text-xl">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-[10px] uppercase font-bold text-slate-500">Domisili</div>
+                <div class="text-base font-extrabold text-slate-800">Makassar, Sulawesi Selatan</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Formal Inquiry Form -->
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-dusty-100 shadow-card space-y-4">
+          <div class="border-b border-dusty-100 pb-3">
+            <h3 class="font-bold text-slate-900 text-xl font-display">Kirim Pesan / Permintaan Diskusi</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Sampaikan pesan Anda, respon akan diteruskan melalui email atau WhatsApp.</p>
+          </div>
+
+          <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 pt-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap / Instansi</label>
+                <input type="text" id="form-name" required placeholder="Contoh: HRD PT Sinergi Digital" class="w-full px-3.5 py-2.5 rounded-xl border border-dusty-200 focus:border-dusty-600 focus:ring-2 focus:ring-dusty-100 outline-none text-xs sm:text-sm bg-slate-50/50" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Email / Kontak Anda</label>
+                <input type="text" id="form-contact" required placeholder="email@perusahaan.com atau 0812..." class="w-full px-3.5 py-2.5 rounded-xl border border-dusty-200 focus:border-dusty-600 focus:ring-2 focus:ring-dusty-100 outline-none text-xs sm:text-sm bg-slate-50/50" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Perihal Kebutuhan</label>
+              <select id="form-category" class="w-full px-3.5 py-2.5 rounded-xl border border-dusty-200 focus:border-dusty-600 focus:ring-2 focus:ring-dusty-100 outline-none text-xs sm:text-sm bg-slate-50/50">
+                <option value="Peluang Kerja / Rekrutmen Karyawan">Peluang Kerja / Rekrutmen Karyawan</option>
+                <option value="Kebutuhan Spesialis Microsoft Office & Administrasi Data">Kebutuhan Spesialis Microsoft Office &amp; Administrasi Data</option>
+                <option value="Pengembangan Website & Sistem Digital">Pengembangan Website &amp; Sistem Digital</option>
+                <option value="Pembuatan Presentasi Eksekutif / Pitch Deck">Pembuatan Presentasi Eksekutif / Pitch Deck</option>
+                <option value="Konsultasi & Lainnya">Konsultasi &amp; Lainnya</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Pesan / Uraian Kebutuhan</label>
+              <textarea id="form-message" rows="4" required placeholder="Tuliskan pesan atau detail penawaran Anda di sini..." class="w-full px-3.5 py-2.5 rounded-xl border border-dusty-200 focus:border-dusty-600 focus:ring-2 focus:ring-dusty-100 outline-none text-xs sm:text-sm bg-slate-50/50 resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-dusty-700 hover:bg-dusty-800 text-white font-bold text-sm shadow-sm hover:shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Kirim Pesan Sekarang</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-dusty-100 py-10 relative z-10 text-center">
+    <div class="max-w-6xl mx-auto px-4 space-y-3">
+      <div class="font-display text-2xl font-bold text-slate-900">
+        Afni Kaulan Sadida
+      </div>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
+        S1 Bisnis Digital Universitas Negeri Makassar • Cumlaude <br/>
+        Spesialisasi Microsoft Office, Administrasi Data, &amp; Web Development
+      </p>
+      <div class="flex justify-center gap-3 pt-2 text-slate-500">
+        <a href="https://wa.me/6285696525184" target="_blank" class="w-9 h-9 rounded-full bg-slate-50 hover:bg-emerald-100 hover:text-emerald-700 flex items-center justify-center transition" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="mailto:kaulanafni@gmail.com" class="w-9 h-9 rounded-full bg-slate-50 hover:bg-dusty-100 hover:text-dusty-800 flex items-center justify-center transition" title="Email">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+        <a href="https://instagram.com/afnikaulann" target="_blank" class="w-9 h-9 rounded-full bg-slate-50 hover:bg-rose-100 hover:text-rose-700 flex items-center justify-center transition" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <div class="text-[11px] text-slate-400 pt-4 border-t border-dusty-100">
+        © 2026 Afni Kaulan Sadida. Hak Cipta Dilindungi. Dibuat dengan presisi &amp; standar profesional.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: VIEW FULL GRADUATION PHOTO -->
+  <div id="photo-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto p-5 relative border border-dusty-200 shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-dusty-100">
+        <div>
+          <div class="font-display text-lg font-bold text-slate-900">
+            Foto Wisuda Afni Kaulan Sadida
+          </div>
+          <div class="text-[11px] text-slate-500">S1 Bisnis Digital Universitas Negeri Makassar</div>
+        </div>
+        <button onclick="closePhotoModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="py-4 flex justify-center">
+        <img src="assets/photo_grad_full.jpg" alt="Foto Wisuda Afni Kaulan Sadida Full" class="rounded-2xl shadow-md max-h-[72vh] object-contain" />
+      </div>
+      <div class="p-3 bg-neutralwarm-50 rounded-xl text-center text-xs text-slate-600">
+        Potret wisuda formal Afni Kaulan Sadida dengan predikat Cumlaude (IPK 3,76).
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP -->
+  <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 left-6 z-40 w-11 h-11 rounded-2xl bg-white/90 backdrop-blur border border-dusty-200 text-dusty-700 shadow-md flex items-center justify-center hover:bg-dusty-50 hover:scale-105 transition-all opacity-0 pointer-events-none">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Toast notification
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = text;
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // Copy to clipboard helper
+    function copyContact(text, message) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(message || 'Teks berhasil disalin!');
+      }).catch(() => {
+        showToast(text);
+      });
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Graduation Photo Modal
+    function openPhotoModal() {
+      document.getElementById('photo-modal').classList.remove('hidden');
+    }
+    function closePhotoModal() {
+      document.getElementById('photo-modal').classList.add('hidden');
+    }
+
+    // Back to top scroll handler + scroll progress bar
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('btn-back-to-top');
+      if (window.scrollY > 400) {
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        btn.classList.add('opacity-0', 'pointer-events-none');
+      }
+      const progress = document.getElementById('scroll-progress');
+      if (progress) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+      }
+    }, { passive: true });
+
+    // -------------------------------------------------------------
+    // SCROLL REVEAL ANIMATIONS (staggered per group)
+    // -------------------------------------------------------------
+    (function initScrollReveal() {
+      const groups = [
+        '#about > div > div:first-child',
+        '#about .lg\\:col-span-7 > div',
+        '#about .lg\\:col-span-5 > div',
+        '#competencies .text-center',
+        '#competencies .grid > div',
+        '#office-showcase .max-w-3xl',
+        '#office-showcase .flex.flex-wrap.gap-2',
+        '#skills .text-center',
+        '#skills .grid > div',
+        '#contact .bg-gradient-to-r',
+        '#contact .lg\\:col-span-5 > div',
+        '#contact .lg\\:col-span-7'
+      ];
+      const elements = [];
+      groups.forEach(sel => {
+        Array.from(document.querySelectorAll(sel)).forEach((el, i) => {
+          if (el.classList.contains('hero-anim') || el.classList.contains('reveal')) return;
+          el.classList.add('reveal');
+          el.style.transitionDelay = Math.min(i * 90, 450) + 'ms';
+          elements.push(el);
+        });
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      elements.forEach(el => observer.observe(el));
+    })();
+
+    // -------------------------------------------------------------
+    // ANIMATED IPK COUNTER (0,00 -> 3,76)
+    // -------------------------------------------------------------
+    (function animateIpkCounter() {
+      const el = document.getElementById('ipk-counter');
+      if (!el) return;
+      const target = parseFloat(el.dataset.value || '3.76');
+      const duration = 1500;
+      let start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * eased).toFixed(2).replace('.', ',');
+        if (p < 1) requestAnimationFrame(step);
+      }
+      el.textContent = '0,00';
+      setTimeout(() => requestAnimationFrame(step), 700);
+    })();
+
+    // -------------------------------------------------------------
+    // MICROSOFT EXCEL INTERACTIVE CHART & FILTER LOGIC
+    // -------------------------------------------------------------
+    let excelChart = null;
+
+    function initExcelChart() {
+      const ctx = document.getElementById('excelSalesChart');
+      if (!ctx) return;
+      
+      const chartData = {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+        datasets: [
+          {
+            label: 'Penjualan Aktual (Juta Rp)',
+            data: [9.5, 11.2, 12.8, 10.4, 13.5, 14.8, 15.2, 16.0, 14.5, 17.2, 18.1, 21.0],
+            backgroundColor: 'rgba(164, 83, 72, 0.75)',
+            borderColor: '#8A3F36',
+            borderRadius: 6,
+            borderWidth: 1.5,
+            type: 'bar',
+          },
+          {
+            label: 'Target KPI (Juta Rp)',
+            data: [9.0, 10.0, 11.0, 11.0, 12.0, 13.0, 14.0, 14.5, 15.0, 15.5, 16.5, 18.0],
+            borderColor: '#059669',
+            backgroundColor: 'rgba(5, 150, 105, 0.1)',
+            fill: false,
+            tension: 0.35,
+            borderWidth: 2.5,
+            pointBackgroundColor: '#059669',
+            pointRadius: 4,
+            type: 'line'
+          }
+        ]
+      };
+
+      excelChart = new Chart(ctx, {
+        data: chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' },
+                boxWidth: 12
+              }
+            },
+            tooltip: {
+              backgroundColor: '#1E293B',
+              titleFont: { family: 'Plus Jakarta Sans', size: 12 },
+              bodyFont: { family: 'Plus Jakarta Sans', size: 11 },
+              padding: 10,
+              cornerRadius: 8
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } }
+            },
+            y: {
+              grid: { color: '#F1F5F9' },
+              ticks: {
+                font: { family: 'Plus Jakarta Sans', size: 10 },
+                callback: function(val) { return 'Rp ' + val + 'M'; }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function filterExcelData(period) {
+      const btnAll = document.getElementById('btn-q-all');
+      const btnQ1 = document.getElementById('btn-q-q1q2');
+      const btnQ2 = document.getElementById('btn-q-q3q4');
+      
+      [btnAll, btnQ1, btnQ2].forEach(b => {
+        b.className = 'px-3 py-1.5 rounded-lg text-slate-600 hover:text-emerald-700 transition';
+      });
+
+      const formulaBar = document.getElementById('excel-formula-bar');
+      const rev = document.getElementById('kpi-revenue');
+      const target = document.getElementById('kpi-target');
+      const profit = document.getElementById('kpi-profit');
+      const eff = document.getElementById('kpi-efficiency');
+
+      if (period === 'all') {
+        btnAll.className = 'px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-xs transition';
+        formulaBar.textContent = '=SUMIFS(Table_Sales[Revenue], Table_Sales[Year], 2026)';
+        rev.textContent = 'Rp 148,5 M';
+        target.textContent = '112.4%';
+        profit.textContent = 'Rp 52,2 M';
+        eff.textContent = '94.8%';
+        
+        if (excelChart) {
+          excelChart.data.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+          excelChart.data.datasets[0].data = [9.5, 11.2, 12.8, 10.4, 13.5, 14.8, 15.2, 16.0, 14.5, 17.2, 18.1, 21.0];
+          excelChart.data.datasets[1].data = [9.0, 10.0, 11.0, 11.0, 12.0, 13.0, 14.0, 14.5, 15.0, 15.5, 16.5, 18.0];
+          excelChart.update();
+        }
+      } else if (period === 'q1q2') {
+        btnQ1.className = 'px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-xs transition';
+        formulaBar.textContent = '=FILTER(Table_Sales, Table_Sales[Bulan] <= 6)';
+        rev.textContent = 'Rp 72,2 M';
+        target.textContent = '108.2%';
+        profit.textContent = 'Rp 24,8 M';
+        eff.textContent = '93.2%';
+
+        if (excelChart) {
+          excelChart.data.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'];
+          excelChart.data.datasets[0].data = [9.5, 11.2, 12.8, 10.4, 13.5, 14.8];
+          excelChart.data.datasets[1].data = [9.0, 10.0, 11.0, 11.0, 12.0, 13.0];
+          excelChart.update();
+        }
+      } else if (period === 'q3q4') {
+        btnQ2.className = 'px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-xs transition';
+        formulaBar.textContent = '=FILTER(Table_Sales, Table_Sales[Bulan] >= 7)';
+        rev.textContent = 'Rp 76,3 M';
+        target.textContent = '116.5%';
+        profit.textContent = 'Rp 27,4 M';
+        eff.textContent = '96.4%';
+
+        if (excelChart) {
+          excelChart.data.labels = ['Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+          excelChart.data.datasets[0].data = [15.2, 16.0, 14.5, 17.2, 18.1, 21.0];
+          excelChart.data.datasets[1].data = [14.0, 14.5, 15.0, 15.5, 16.5, 18.0];
+          excelChart.update();
+        }
+      }
+    }
+
+    function calculateMargin() {
+      const price = parseFloat(document.getElementById('calc-price').value) || 0;
+      const cogs = parseFloat(document.getElementById('calc-cogs').value) || 0;
+      const res = document.getElementById('calc-result');
+      if (price <= 0) {
+        res.textContent = '0.00%';
+        return;
+      }
+      const margin = ((price - cogs) / price) * 100;
+      res.textContent = margin.toFixed(2) + '%';
+      if (margin >= 30) {
+        res.className = 'text-emerald-700 font-mono text-sm font-bold';
+      } else {
+        res.className = 'text-amber-700 font-mono text-sm font-bold';
+      }
+    }
+
+    function switchOfficeTab(tab) {
+      const tabExcel = document.getElementById('tab-content-excel');
+      const tabPpt = document.getElementById('tab-content-ppt');
+      const tabWord = document.getElementById('tab-content-word');
+
+      const btnExcel = document.getElementById('btn-tab-excel');
+      const btnPpt = document.getElementById('btn-tab-ppt');
+      const btnWord = document.getElementById('btn-tab-word');
+
+      tabExcel.classList.add('hidden');
+      tabPpt.classList.add('hidden');
+      tabWord.classList.add('hidden');
+
+      btnExcel.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-600 hover:text-emerald-700 transition-all';
+      btnPpt.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-600 hover:text-orange-700 transition-all';
+      btnWord.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-600 hover:text-blue-700 transition-all';
+
+      if (tab === 'excel') {
+        tabExcel.classList.remove('hidden');
+        btnExcel.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 bg-white text-emerald-700 shadow-sm transition-all';
+        if (!excelChart) {
+          setTimeout(initExcelChart, 50);
+        }
+      } else if (tab === 'ppt') {
+        tabPpt.classList.remove('hidden');
+        btnPpt.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 bg-white text-orange-700 shadow-sm transition-all';
+      } else if (tab === 'word') {
+        tabWord.classList.remove('hidden');
+        btnWord.className = 'flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 bg-white text-blue-700 shadow-sm transition-all';
+      }
+    }
+
+    // PowerPoint Slides Data
+    const pptSlides = [
+      {
+        badge: "Slide 1 • Executive Cover",
+        title: "Digital Business Acceleration 2026",
+        desc: "Strategi Pertumbuhan Bisnis Berbasis Analisis Data Riil, Transformasi Saluran Digital, dan Optimasi Konversi.",
+        tags: ["Target ROI: +250%", "Market Penetration", "Afni Kaulan Sadida"],
+        bg: "from-[#1E293B] via-[#334155] to-[#475569]"
+      },
+      {
+        badge: "Slide 2 • Market Analysis",
+        title: "Peluang Pasar & Segmen Konsumen",
+        desc: "Riset penetrasi e-commerce dan demografi konsumen digital dengan identifikasi pain-point utama serta kompetitor benchmarking.",
+        tags: ["82% Mobile Traffic", "LTV:CAC = 3.8x", "Market Share Analysis"],
+        bg: "from-[#1e1b4b] via-[#312e81] to-[#4338ca]"
+      },
+      {
+        badge: "Slide 3 • Financial Model",
+        title: "Proyeksi Finansial & Break-Even Point",
+        desc: "Estimasi arus kas, target margin laba bersih 35% margin operasional, dan timeline pencapaian BEP dalam 8 bulan.",
+        tags: ["BEP: Bulan ke-8", "Cash Flow Positif", "Efisiensi 94.8%"],
+        bg: "from-[#064e3b] via-[#047857] to-[#10b981]"
+      },
+      {
+        badge: "Slide 4 • Implementation Plan",
+        title: "Roadmap Eksekusi & Timeline Proyek",
+        desc: "Rencana terstruktur 4 fase: Validasi MVP, Peluncuran Multi-Channel, Scale-Up Pemasaran, dan Retensi Pelanggan Otomatis.",
+        tags: ["4 Fase Terukur", "Sprint 2 Mingguan", "Ready to Launch"],
+        bg: "from-[#3B1814] via-[#5F2D27] to-[#8A3F36]"
+      }
+    ];
+    let currentSlideIdx = 0;
+
+    function renderSlide() {
+      const slide = pptSlides[currentSlideIdx];
+      const stage = document.getElementById('ppt-slide-stage');
+      const badge = document.getElementById('slide-badge');
+      const title = document.getElementById('slide-title');
+      const desc = document.getElementById('slide-desc');
+      const tagsBox = document.getElementById('slide-footer-tags');
+      const numSpan = document.getElementById('current-slide-num');
+
+      stage.className = `relative rounded-2xl overflow-hidden aspect-[16/9] bg-gradient-to-br ${slide.bg} text-white p-6 sm:p-10 flex flex-col justify-between shadow-inner transition-all duration-300`;
+      badge.textContent = slide.badge;
+      title.textContent = slide.title;
+      desc.textContent = slide.desc;
+      numSpan.textContent = currentSlideIdx + 1;
+
+      tagsBox.innerHTML = slide.tags.map(t => `<span class="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur border border-white/20">${t}</span>`).join('');
+    }
+
+    function nextSlide() {
+      currentSlideIdx = (currentSlideIdx + 1) % pptSlides.length;
+      renderSlide();
+    }
+
+    function prevSlide() {
+      currentSlideIdx = (currentSlideIdx - 1 + pptSlides.length) % pptSlides.length;
+      renderSlide();
+    }
+
+    // Contact Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const contact = document.getElementById('form-contact').value;
+      const category = document.getElementById('form-category').value;
+      const msg = document.getElementById('form-message').value;
+
+      showToast(`Terima kasih ${name}, pesan Anda berhasil tercatat!`);
+
+      const waText = encodeURIComponent(`Halo Afni Kaulan Sadida, saya ${name} (${contact}).\nPerihal: ${category}\nPesan: ${msg}`);
+      setTimeout(() => {
+        if (confirm("Pesan Anda telah tersimpan. Teruskan pesan ini langsung ke WhatsApp Afni?")) {
+          window.open(`https://wa.me/6285696525184?text=${waText}`, '_blank');
+        }
+      }, 400);
+
+      document.getElementById('contact-form').reset();
+    }
+
+    // Initialize Chart on Page Load
+    window.addEventListener('DOMContentLoaded', () => {
+      initExcelChart();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pptBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D24726" />
+      <stop offset="100%" stop-color="#A22D11" />
+    </linearGradient>
+    <linearGradient id="slideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065" />
+      <stop offset="100%" stop-color="#581c87" />
+    </linearGradient>
+  </defs>
+  <!-- Window frame -->
+  <rect width="600" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Header -->
+  <rect width="600" height="44" rx="16" fill="url(#pptBg)"/>
+  <rect y="24" width="600" height="20" fill="url(#pptBg)"/>
+  <circle cx="22" cy="22" r="5" fill="#ef4444"/>
+  <circle cx="38" cy="22" r="5" fill="#f59e0b"/>
+  <circle cx="54" cy="22" r="5" fill="#10b981"/>
+  <text x="80" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Microsoft PowerPoint - Business_Pitch_Deck_Strategy.pptx</text>
+  
+  <!-- Slide Stage -->
+  <rect x="24" y="58" width="552" height="265" rx="12" fill="url(#slideGrad)" stroke="#9333ea" stroke-width="1.5"/>
+  
+  <!-- Slide Content -->
+  <rect x="44" y="78" width="105" height="24" rx="12" fill="#8b5cf6" fill-opacity="0.4" stroke="#c084fc" stroke-width="1"/>
+  <text x="52" y="94" fill="#e9d5ff" font-size="10" font-weight="bold" font-family="sans-serif">EXECUTIVE DECK</text>
+  
+  <text x="44" y="132" fill="#ffffff" font-size="22" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">Digital Business Acceleration 2026</text>
+  <text x="44" y="156" fill="#c084fc" font-size="13" font-weight="500" font-family="sans-serif">Strategi Pertumbuhan Berbasis Analisis Data &amp; Desain Interaktif</text>
+  
+  <!-- 3 Presentation Feature Cards -->
+  <rect x="44" y="180" width="155" height="120" rx="10" fill="#3b0764" fill-opacity="0.75" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="66" cy="202" r="12" fill="#8b5cf6"/>
+  <text x="62" y="206" fill="#ffffff" font-size="12" font-weight="bold">01</text>
+  <text x="86" y="206" fill="#f5d0fe" font-size="12" font-weight="bold">Analisis Pasar</text>
+  <text x="54" y="228" fill="#d8b4fe" font-size="9">Riset demografi &amp; segmen konsumen dengan akurasi teruji.</text>
+  <rect x="54" y="270" width="135" height="18" rx="4" fill="#581c87"/>
+  <text x="60" y="282" fill="#e9d5ff" font-size="8.5" font-weight="bold">Proyeksi: +250% Growth</text>
+
+  <rect x="214" y="180" width="155" height="120" rx="10" fill="#3b0764" fill-opacity="0.75" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="236" cy="202" r="12" fill="#ec4899"/>
+  <text x="232" y="206" fill="#ffffff" font-size="12" font-weight="bold">02</text>
+  <text x="256" y="206" fill="#fbcfe8" font-size="12" font-weight="bold">Visual Infografis</text>
+  <text x="224" y="228" fill="#f472b6" font-size="9">Slide Master kustom, Morph transition &amp; visual storytelling.</text>
+  <rect x="224" y="270" width="135" height="18" rx="4" fill="#581c87"/>
+  <text x="230" y="282" fill="#fbcfe8" font-size="8.5" font-weight="bold">Aesthetic Presentation</text>
+
+  <rect x="384" y="180" width="175" height="120" rx="10" fill="#3b0764" fill-opacity="0.75" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="406" cy="202" r="12" fill="#06b6d4"/>
+  <text x="402" y="206" fill="#ffffff" font-size="12" font-weight="bold">03</text>
+  <text x="426" y="206" fill="#cffafe" font-size="12" font-weight="bold">Eksekusi Tim</text>
+  <text x="394" y="228" fill="#67e8f9" font-size="9">Roadmap terstruktur, KPI terukur, &amp; komunikasi lintas tim.</text>
+  <rect x="394" y="270" width="155" height="18" rx="4" fill="#581c87"/>
+  <text x="400" y="282" fill="#cffafe" font-size="8.5" font-weight="bold">Siap Implementasi &amp; Pitch</text>
+
+  <!-- Slide filmstrip at bottom -->
+  <rect x="24" y="332" width="552" height="38" rx="6" fill="#e2e8f0"/>
+  <rect x="32" y="336" width="45" height="30" rx="4" fill="#581c87" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="48" y="354" fill="#ffffff" font-size="10" font-weight="bold">1</text>
+  <rect x="84" y="336" width="45" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="102" y="354" fill="#64748b" font-size="10">2</text>
+  <rect x="136" y="336" width="45" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="154" y="354" fill="#64748b" font-size="10">3</text>
+  <rect x="188" y="336" width="45" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="206" y="354" fill="#64748b" font-size="10">4</text>
+  <text x="250" y="355" fill="#475569" font-size="11" font-weight="600" font-family="sans-serif">Slide 1 dari 18 • Dirancang dengan Master Slide &amp; Tipografi Elegan</text>
+</svg>

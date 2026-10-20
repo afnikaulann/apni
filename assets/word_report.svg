@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wdBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#185ABD" />
+      <stop offset="100%" stop-color="#103f82" />
+    </linearGradient>
+  </defs>
+  <!-- Window frame -->
+  <rect width="600" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Header -->
+  <rect width="600" height="44" rx="16" fill="url(#wdBg)"/>
+  <rect y="24" width="600" height="20" fill="url(#wdBg)"/>
+  <circle cx="22" cy="22" r="5" fill="#ef4444"/>
+  <circle cx="38" cy="22" r="5" fill="#f59e0b"/>
+  <circle cx="54" cy="22" r="5" fill="#10b981"/>
+  <text x="80" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Microsoft Word - Laporan_Studi_Kelayakan_Bisnis.docx</text>
+  
+  <!-- Ribbon Toolbar -->
+  <rect x="16" y="52" width="568" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="26" y="68" fill="#185ABD" font-size="11" font-weight="bold">Heading 1</text>
+  <text x="96" y="68" fill="#64748b" font-size="11">Heading 2</text>
+  <text x="166" y="68" fill="#64748b" font-size="11">Daftar Isi Otomatis</text>
+  <text x="280" y="68" fill="#64748b" font-size="11">Mail Merge</text>
+  <text x="360" y="68" fill="#64748b" font-size="11">Format Sitasi &amp; Referensi</text>
+
+  <!-- Document Page Mockup -->
+  <rect x="80" y="86" width="440" height="280" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  
+  <!-- Doc Header -->
+  <text x="110" y="116" fill="#185ABD" font-size="16" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">LAPORAN ANALISIS STUDI KELAYAKAN</text>
+  <text x="110" y="132" fill="#475569" font-size="11" font-weight="600">Program Inkubasi Bisnis Digital &amp; Optimasi Operasional</text>
+  <line x1="110" y1="140" x2="490" y2="140" stroke="#185ABD" stroke-width="2"/>
+  
+  <!-- Table of Contents badge -->
+  <rect x="110" y="150" width="380" height="65" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="122" y="168" fill="#1e293b" font-size="10" font-weight="bold">DAFTAR ISI (AUTOMATED)</text>
+  
+  <text x="122" y="184" fill="#334155" font-size="9">1. Ringkasan Eksekutif ................................................................ hal 02</text>
+  <text x="122" y="198" fill="#334155" font-size="9">2. Metodologi Analisis &amp; Pengumpulan Data .......................... hal 07</text>
+  <text x="122" y="210" fill="#334155" font-size="9">3. Evaluasi Finansial &amp; Proyeksi Arus Kas ................................ hal 14</text>
+  
+  <!-- Paragraph lines -->
+  <text x="110" y="235" fill="#0f172a" font-size="11" font-weight="bold">1. Ringkasan Eksekutif</text>
+  <rect x="110" y="245" width="380" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="110" y="256" width="360" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="110" y="267" width="340" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="110" y="278" width="375" height="6" rx="3" fill="#e2e8f0"/>
+  
+  <rect x="110" y="295" width="130" height="20" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="116" y="308" fill="#1d4ed8" font-size="8.5" font-weight="bold">Standar Formal Dikti / AP</text>
+  
+  <rect x="246" y="295" width="130" height="20" rx="4" fill="#f3e8ff" stroke="#e9d5ff"/>
+  <text x="252" y="308" fill="#7e22ce" font-size="8.5" font-weight="bold">SOP &amp; Proposal Bisnis Rapi</text>
+</svg>
